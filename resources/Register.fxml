@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: #2a2c57;" VBox.vgrow="ALWAYS">
+         <children>
+            <Label layoutX="149.0" layoutY="28.0" text="Cadastre-se no Leviathan!" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="246.0" layoutY="104.0" text="Email" textFill="WHITE" />
+            <Label layoutX="246.0" layoutY="159.0" text="Senha" textFill="WHITE" />
+            <Label layoutX="246.0" layoutY="216.0" text="Confirme sua senha" textFill="WHITE" />
+            <TextField layoutX="246.0" layoutY="121.0" />
+            <PasswordField layoutX="246.0" layoutY="175.0" />
+            <PasswordField layoutX="246.0" layoutY="233.0" />
+            <Button layoutX="279.0" layoutY="281.0" mnemonicParsing="false" text="Cadastrar-se" />
+            <Button layoutX="297.0" layoutY="320.0" mnemonicParsing="false" text="Voltar" />
+            <Hyperlink layoutY="375.0" text="Ajuda" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
