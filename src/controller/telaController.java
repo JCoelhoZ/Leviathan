@@ -13,5 +13,4 @@ public class telaController {
 	@FXML
 	private Button loginButton;
 
-
 }
