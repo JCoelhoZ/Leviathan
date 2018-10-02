@@ -14,10 +14,10 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: #5a5c7d;" VBox.vgrow="ALWAYS">
       <children>
-            <Button fx:id="settingsButton" alignment="CENTER" layoutY="25.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="154.0" text="Configurações" />
-            <Button fx:id="helpButton" alignment="CENTER" layoutY="50.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="154.0" text="Ajuda" />
-            <Button fx:id="logoutButton" alignment="CENTER" layoutY="75.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="154.0" text="Logout" />
-            <Button fx:id="leviathanButton" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="154.0" text="LEVIATHAN" />
+            <Button alignment="CENTER" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#settingsClick" prefHeight="25.0" prefWidth="154.0" text="Configurações" />
+            <Button alignment="CENTER" layoutY="50.0" mnemonicParsing="false" onMouseClicked="#helpClick" prefHeight="25.0" prefWidth="154.0" text="Ajuda" />
+            <Button alignment="CENTER" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#logoutClick" prefHeight="25.0" prefWidth="154.0" text="Logout" />
+            <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#leviathanClick" prefHeight="25.0" prefWidth="154.0" text="LEVIATHAN" />
             <Pane layoutX="154.0" prefHeight="400.0" prefWidth="487.0" style="-fx-background-color: #2a2c57;">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" text="Nova Tarefa" textFill="WHITE">
@@ -31,8 +31,8 @@
                   <TextArea fx:id="tasknameField" layoutX="14.0" layoutY="75.0" prefHeight="17.0" prefWidth="340.0" />
                   <DatePicker fx:id="finishDateField" layoutX="14.0" layoutY="148.0" prefHeight="25.0" prefWidth="191.0" />
                   <ChoiceBox fx:id="categoryChoice" layoutX="14.0" layoutY="217.0" prefHeight="25.0" prefWidth="191.0" />
-                  <Button fx:id="doneButton" layoutX="26.0" layoutY="273.0" mnemonicParsing="false" text="Concluir" />
-                  <Button fx:id="cancelButton" layoutX="131.0" layoutY="273.0" mnemonicParsing="false" text="Cancelar" />
+                  <Button layoutX="26.0" layoutY="273.0" mnemonicParsing="false" onMouseClicked="#doneClick" text="Concluir" />
+                  <Button layoutX="131.0" layoutY="273.0" mnemonicParsing="false" onMouseClicked="#cancelClick" text="Cancelar" />
                </children>
             </Pane>
       </children>

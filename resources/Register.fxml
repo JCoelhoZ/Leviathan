@@ -20,12 +20,12 @@
             </Label>
             <Label layoutX="246.0" layoutY="104.0" text="Email" textFill="WHITE" />
             <Label layoutX="246.0" layoutY="159.0" text="Senha" textFill="WHITE" />
-            <Label layoutX="246.0" layoutY="216.0" text="Confirme sua senha" textFill="WHITE" />
+            <Label layoutX="246.0" layoutY="212.0" text="Confirme sua senha" textFill="WHITE" />
             <TextField fx:id="emailField" layoutX="246.0" layoutY="121.0" />
             <PasswordField fx:id="passwordField" layoutX="246.0" layoutY="175.0" />
-            <PasswordField fx:id="passwordconfirmField" layoutX="246.0" layoutY="233.0" />
-            <Button fx:id="registeredButton" layoutX="279.0" layoutY="281.0" mnemonicParsing="false" text="Cadastrar-se" />
-            <Button fx:id="backButton" layoutX="297.0" layoutY="320.0" mnemonicParsing="false" text="Voltar" />
+            <PasswordField fx:id="passwordconfirmField" layoutX="246.0" layoutY="229.0" />
+            <Button layoutX="279.0" layoutY="281.0" mnemonicParsing="false" onMouseClicked="#registerClick" text="Cadastrar-se" />
+            <Button fx:id="backButton" layoutX="297.0" layoutY="320.0" mnemonicParsing="false" onMouseClicked="#backClick" text="Voltar" />
             <Hyperlink fx:id="helpLink" layoutY="375.0" text="Ajuda" />
          </children>
     </AnchorPane>
