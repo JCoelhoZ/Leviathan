@@ -5,21 +5,18 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionFactory {
-	public final static String stringConexao = "jdbc:mysql://localhost:3306/leviathandb?useTimezone=true&serverTimezone=UTC&autoReconnect=true&useSSL=false";
-	public final static String nameDB = "leviathandb";
-	public final static String usuarioBD = "root";
-	public final static String senhaBD = "root";
 
-	static Connection getConnection(){
-	try {
-		return DriverManager.getConnection(String.format(stringConexao,
-				nameDB,
-				usuarioBD,
-				senhaBD));
-	}
-		catch(SQLException e){
-	}
-		throw new RuntimeException();
-	}
 
+	private final static String nameBD = "leviathandb";
+    private final static String usuarioBD = "root";
+    private final static String senhaBD = "d15CF9c0046AC8e7fbc8";
+
+    static Connection getConnection(){
+        try {
+            return DriverManager
+                    .getConnection(String.format("jdbc:mysql://localhost/%s?useTimezone=true&serverTimezone=UTC&autoReconnect=true&useSSL=false",nameBD),usuarioBD,senhaBD);
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+    }
 }

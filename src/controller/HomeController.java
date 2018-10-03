@@ -14,7 +14,7 @@ public class HomeController {
 	public static void start(){
 			if(Sessao.getInstance().isUsuarioLogado()){
 				try{
-					Parent root = FXMLLoader.load(Objects.requireNonNull(LoginController.class.getClassLoader().getResource("Login.fxml")));
+					Parent root = FXMLLoader.load(Objects.requireNonNull(LoginController.class.getClassLoader().getResource("Home.fxml")));
 					Stage stage = new Stage();
 					stage.setTitle("Leviathan");
 					stage.setScene(new Scene(root));
@@ -28,14 +28,13 @@ public class HomeController {
 			}
 	}
 
-//
-//    public void logoutClick(MouseEvent mouseEvent) {
-//        Sessao.getInstance().removeCurrentUser();
-//        LoginController.start();
-//        Stage primaryStage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
-//        primaryStage.hide();
-//
-//    }
 
+
+    public void logoutClick(MouseEvent mouseEvent) {
+        Sessao.getInstance().removeCurrentUser();
+        LoginController.start();
+        Stage primaryStage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+        primaryStage.hide();
+    }
 
 }

@@ -19,7 +19,7 @@ public class LoginDAO extends BaseDAO {
 		//busca no banco o email digitado na tela de login
 		try(
 				Connection connection = getConnection();
-				PreparedStatement statement = connection.prepareStatement("select id, name, email, password from usuarios where email=?")
+				PreparedStatement statement = connection.prepareStatement("select idUsuario, nome, email, password from usuario where email=?")
 		){
 			statement.setString(1,email);
 			ResultSet resultset = statement.executeQuery();
