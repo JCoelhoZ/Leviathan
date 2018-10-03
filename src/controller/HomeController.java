@@ -14,7 +14,7 @@ public class HomeController {
 	public static void start(){
 			if(Sessao.getInstance().isUsuarioLogado()){
 				try{
-					Parent root = FXMLLoader.load(Objects.requireNonNull(LoginController.class.getClassLoader().getResource("Home.fxml")));
+					Parent root = FXMLLoader.load(Objects.requireNonNull(HomeController.class.getClassLoader().getResource("Home.fxml")));
 					Stage stage = new Stage();
 					stage.setTitle("Leviathan");
 					stage.setScene(new Scene(root));

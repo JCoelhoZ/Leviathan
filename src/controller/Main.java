@@ -13,7 +13,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Register.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Leviathan");
@@ -25,16 +25,16 @@ public class Main extends Application {
     }
 }
 
-/*
-public class Main{
-public static void main(String[] args){
-File f = new File("resources/fxml/Login.fxml");
-if(f.exists()) {
-    System.out.println("File exists");
-    System.out.println(f.getAbsoluteFile());
-}
-else{
-	System.out.println("File not found");
-}
-}
-}*/
+
+//public class Main{
+//public static void main(String[] args){
+//File f = new File("resources/fxml/Login.fxml");
+//if(f.exists()) {
+//    System.out.println("File exists");
+//    System.out.println(f.getAbsoluteFile());
+//}
+//else{
+//	System.out.println("File not found");
+//}
+//}
+//}

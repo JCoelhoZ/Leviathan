@@ -30,7 +30,6 @@ public class LoginController implements Initializable {
 
 	private LoginComponent component;
 
-
 	public static void start(){
 		try{
 			Parent root = FXMLLoader.load(Objects.requireNonNull(LoginController.class.getClassLoader().getResource("Login.fxml")));
