@@ -24,7 +24,9 @@ public class RegisterDAO extends BaseDAO{
 				throw new Exception("Email já cadastrado");
 			}else{
 				PreparedStatement inserir = connection.prepareStatement("insert into usuario(email, password) values (?,?)");
-				inserir.executeQuery();
+				inserir.setString(1,email);
+				inserir.setString(2,password);
+				inserir.execute();
 			}
 
 		}catch(Exception e){

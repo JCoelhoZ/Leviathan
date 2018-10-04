@@ -9,7 +9,7 @@ public class ConnectionFactory {
 
 	private final static String nameBD = "leviathandb";
     private final static String usuarioBD = "root";
-    private final static String senhaBD = "root";
+    private final static String senhaBD = "d15CF9c0046AC8e7fbc8";
 
     static Connection getConnection(){
         try {

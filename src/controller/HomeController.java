@@ -28,13 +28,20 @@ public class HomeController {
 			}
 	}
 
-
-
     public void logoutClick(MouseEvent mouseEvent) {
         Sessao.getInstance().removeCurrentUser();
         LoginController.start();
         Stage primaryStage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
         primaryStage.hide();
     }
+
+    public void helpClick(MouseEvent mouseEvent){
+
+    }
+
+    public void newTaskClick(MouseEvent mouseEvent){
+
+    }
+
 
 }

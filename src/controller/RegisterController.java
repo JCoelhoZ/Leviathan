@@ -66,6 +66,7 @@ public class RegisterController implements Initializable{
 		LoginController.start();
 		Stage primaryStage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
         primaryStage.hide();
+
 	}
 
 }
