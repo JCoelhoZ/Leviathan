@@ -14,10 +14,10 @@ public class RegisterComponent {
 	public User realizarRegistro(String email, String password, String passwordConfirm) throws Exception{
 		if(Strings.isNullOrEmpty(email) || Strings.isNullOrEmpty(password) || Strings.isNullOrEmpty(passwordConfirm)){
 			throw new Exception("Preencha todos os campos");
-		}
+		}else{
 		User user = dao.cadastrarUsuario(email, password, passwordConfirm);
-
-	return user;
+		return user;
+		}
 	}
 
 
