@@ -1,14 +1,29 @@
 package entity;
 
+import java.sql.Date;
+
 public class Task {
-	private int idtarefa;
+	private long idtarefa;
 	private String tarefa;
-	
-	
-	public int getIdtarefa() {
+	private String category;
+	private Date date;
+
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	public long getIdtarefa() {
 		return idtarefa;
 	}
-	public void setIdtarefa(int idtarefa) {
+	public void setIdtarefa(long idtarefa) {
 		this.idtarefa = idtarefa;
 	}
 	public String getTarefa() {

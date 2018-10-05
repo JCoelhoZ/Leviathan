@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import entity.User;
-//import uteis.Strings;
 
 public class RegisterDAO extends BaseDAO{
 	User cadastrarUsuario(String email, String password, String passwordConfirm) throws Exception{
