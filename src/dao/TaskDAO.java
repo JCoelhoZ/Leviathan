@@ -1,17 +1,15 @@
 package dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.time.LocalDate;
 
 import entity.Task;
 import uteis.Sessao;
 
 public class TaskDAO extends BaseDAO {
 
-	public Task addTask(String tarefa, Date date, String category){
+	public Task addTask(String tarefa, String category){
 		Task task = null;
 		try(
 				Connection connection = getConnection();
@@ -24,11 +22,10 @@ public class TaskDAO extends BaseDAO {
 
 			//se encontrou a categoria, insere a tarefa
 			if(resultset.next()){
-				PreparedStatement newTask = connection.prepareStatement("insert into tarefas(tarefa, prazo, idUsuario,categoryname) values(?,?,?,?)");
+				PreparedStatement newTask = connection.prepareStatement("insert into tarefas(tarefa, idUsuario,categoryname) values(?,?,?)");
 				newTask.setString(1, tarefa);
-				newTask.setDate(2, date);
-				newTask.setLong(3, Sessao.getInstance().getCurrentUser().getId());
-				newTask.setString(4, category);
+				newTask.setLong(2, Sessao.getInstance().getCurrentUser().getId());
+				newTask.setString(3, category);
 				newTask.execute();
 				System.out.println("ACHOU A CATEGORIA E BOTOU TAREFA");
 
@@ -41,11 +38,10 @@ public class TaskDAO extends BaseDAO {
 				System.out.println("NAO ACHOU A CATEGORIA E BOTOU TAREFA");
 
 				//insere task na categoria criada
-				PreparedStatement newTask = connection.prepareStatement("insert into tarefas(tarefa, prazo, idUsuario,categoryname) values(?,?,?,?)");
+				PreparedStatement newTask = connection.prepareStatement("insert into tarefas(tarefa, idUsuario,categoryname) values(?,?,?)");
 				newTask.setString(1, tarefa);
-				newTask.setDate(2, date);
-				newTask.setLong(3, Sessao.getInstance().getCurrentUser().getId());
-				newTask.setString(4, category);
+				newTask.setLong(2, Sessao.getInstance().getCurrentUser().getId());
+				newTask.setString(3, category);
 				newTask.execute();
 			}
 

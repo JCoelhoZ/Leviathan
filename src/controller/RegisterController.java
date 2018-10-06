@@ -35,6 +35,7 @@ public class RegisterController implements Initializable{
 			Parent root = FXMLLoader.load(Objects.requireNonNull(RegisterController.class.getResource("Register.fxml")));
 			Stage stage = new Stage();
 			stage.setTitle("Leviathan");
+			stage.setResizable(false);
 			stage.setScene(new Scene(root));
 			stage.show();
 

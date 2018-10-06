@@ -6,7 +6,6 @@ import uteis.Strings;
 
 public class LoginComponent {
 
-
 	private LoginDAO dao;
 	public LoginComponent(){
 		dao = new LoginDAO();

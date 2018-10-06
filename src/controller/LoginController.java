@@ -36,6 +36,7 @@ public class LoginController implements Initializable {
 			Parent root = FXMLLoader.load(Objects.requireNonNull(LoginController.class.getResource("Login.fxml")));
 			Stage stage = new Stage();
 			stage.setTitle("Leviathan");
+		    stage.setResizable(false);
 			stage.setScene(new Scene(root));
 			stage.show();
 

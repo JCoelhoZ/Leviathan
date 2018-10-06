@@ -2,11 +2,14 @@ package controller;
 
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
 import dao.HomeDAO;
+import dao.TaskDAO;
 import entity.Task;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,17 +19,36 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import uteis.Sessao;
+import uteis.TaskAdapter;
+import uteis.TaskViewer;
 
 public class HomeController implements Initializable{
 
 	@FXML
-	public TableView tableView;
+	public TableView<TaskViewer> backlogTableView;
 	@FXML
-	public TableView backlogTableView;
+	public TableColumn<Task, String> coltarefa;
+	@FXML
+	public TableColumn<Task,Date> coldata;
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources){
+		HomeDAO dao = new HomeDAO();
+		TaskAdapter adaptaTask = new TaskAdapter();
+		backlogTableView.setItems(FXCollections.observableArrayList(adaptaTask.adaptarTodosParaView(dao.buscaTarefa("Backlog"))));
+
+
+		TableColumn colunaNome = (TableColumn) backlogTableView.getColumns().get(0);
+        colunaNome.setCellValueFactory(new PropertyValueFactory<TaskViewer, String>("nometarefa"));
+
+	}
 
 	public static void start(){
 			if(Sessao.getInstance().isUsuarioLogado()){
@@ -35,6 +57,7 @@ public class HomeController implements Initializable{
 					Stage stage = new Stage();
 					stage.setTitle("Leviathan");
 					stage.setScene(new Scene(root));
+				    stage.setResizable(false);
 					stage.show();
 				}catch(Exception e){
 					e.printStackTrace();
@@ -43,17 +66,6 @@ public class HomeController implements Initializable{
 				System.out.println("Usuário não está logado");
 				LoginController.start();
 			}
-
-	}
-	@Override
-	public void initialize(URL location, ResourceBundle resources){
-		HomeDAO dao = new HomeDAO();
-		try {
-			backlogTableView.setItems(FXCollections.observableArrayList(dao.buscaTarefa("Backlog")));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
     public void logoutClick(MouseEvent mouseEvent) {
@@ -64,7 +76,7 @@ public class HomeController implements Initializable{
     }
 
     public void helpClick(MouseEvent mouseEvent){
-
+    	//implementação futura
     }
 
     public void newTaskClick(MouseEvent mouseEvent){
