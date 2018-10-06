@@ -1,6 +1,5 @@
 package controller;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -20,7 +19,6 @@ import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
 
-
 	@FXML
 	private TextField emailField;
 	@FXML
@@ -30,18 +28,12 @@ public class LoginController implements Initializable {
 
 	private LoginComponent component;
 
-//	private static Stage stage;
-
 	public static void start(){
 		try{
 
-//			stage = primaryStage;
-//	    	primaryStage.setTitle("Leviathan");
-//
-//	    	Parent fxmlLogin = FXMLLoader.load(getClass().getResource("Login.fxml"));
-//	    	loginScene = new Scene(fxmlLogin);
+			System.out.println(LoginController.class.getResource("Login.fxml"));
 
-			Parent root = FXMLLoader.load(Objects.requireNonNull(LoginController.class.getClassLoader().getResource("Login.fxml")));
+			Parent root = FXMLLoader.load(Objects.requireNonNull(LoginController.class.getResource("Login.fxml")));
 			Stage stage = new Stage();
 			stage.setTitle("Leviathan");
 			stage.setScene(new Scene(root));
@@ -68,17 +60,9 @@ public class LoginController implements Initializable {
 		}
 	}
 
-//	public void registerClick(MouseEvent mouseEvent){
-//		 try {
-//	            FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getClassLoader().getResource("Register.fxml")));
-//	            Parent root = loader.load();
-//	            RegisterController controller = loader.getController();
-//	            Stage primaryStage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
-//	            controller.setPreviousScene(primaryStage.getScene());
-//	            primaryStage.setScene(new Scene(root));
-//
-//	        } catch (IOException e) {
-//	            e.printStackTrace();
-//	        }
-//	}
+	public void registerClick(MouseEvent mouseEvent){
+		RegisterController.start();
+		Stage primaryStage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+        primaryStage.hide();
+	}
 }

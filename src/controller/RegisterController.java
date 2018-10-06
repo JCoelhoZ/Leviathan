@@ -32,7 +32,7 @@ public class RegisterController implements Initializable{
 
 	public static void start(){
 		try{
-			Parent root = FXMLLoader.load(Objects.requireNonNull(RegisterController.class.getClassLoader().getResource("Register.fxml")));
+			Parent root = FXMLLoader.load(Objects.requireNonNull(RegisterController.class.getResource("Register.fxml")));
 			Stage stage = new Stage();
 			stage.setTitle("Leviathan");
 			stage.setScene(new Scene(root));

@@ -6,6 +6,13 @@ public class Task {
 	private long idtarefa;
 	private String tarefa;
 	private String category;
+	private long idUsuario;
+	public long getIdUsuario() {
+		return idUsuario;
+	}
+	public void setIdUsuario(long idUsuario) {
+		this.idUsuario = idUsuario;
+	}
 	private Date date;
 
 	public String getCategory() {
